@@ -1,0 +1,298 @@
+
+/* Definizione delle variabili nel root per la modalità dark con miglioramenti per contrasto e differenziazione basati sui colori della dashboard Dashdark X */
+:root {
+    // Colors
+    --primary-color: #111827;
+    --secondary-color: #1f2937;
+    --tertiary-color: #1f2937;
+    --accent-color: #3b82f6;
+    --accent-color-hover: #2563eb;
+    --highlight-color: #7dd3fc;
+    --contrast-color: #ffffff;
+
+    // Text
+    --text-color: #e2e8f0;
+    --text-color-secondary: #94a3b8;
+
+    // Background
+    --bg: #0f172a;
+    --bg-light: #1e293b;
+    --bg-highlight: #334155;
+
+    // Card
+    --bg-card: #1e293b;
+    --p-card: 1.25rem;
+    --bc-card: #475569;
+    --br-card: 1rem;
+    --gap-card: 0.5rem;
+
+    // Input
+    --p-input: .375rem .75rem;
+    --px-input: .75rem;
+    --bg-select: #1e3a5f;
+    --bg-input: #1e3a5f;
+    --bg-input-light: #1e293b;
+    --bc-input: #3b82f6;
+    --br-input: 0.6rem;
+
+    // Form Field
+    --gap-form: 0.5rem;
+    --gap-field: 0.25rem;
+    --mb-field: 1rem;
+
+    // Button
+    --bg-btn: var(--accent-color);
+    --br-btn: 0.6rem;
+    --p-btn: 0.25rem .5rem;
+    
+    // Font
+    --font-size: 1rem;
+    --font-family: 'Montserrat', sans-serif;
+    --line-height: 1.5;
+}
+
+/* Reset di base per rimuovere gli stili di default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color)!important;
+    line-height: var(--line-height)!important;
+}
+
+/* Definizione dei tag HTML con stili neutri */
+body {
+    font-family: var(--font-family)!important;
+    font-size: var(--font-size)!important;
+    background-color: var(--bg)!important;
+    color: var(--text-color)!important;
+}
+
+/* Stili di base per i tag principali */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+a {
+    color: var(--accent-color)!important;
+    text-decoration: none!important;
+}
+
+a:hover {
+    color: var(--accent-color-hover)!important;
+}
+
+a:focus-visible {
+    outline-offset: none !important;
+    outline: none !important;
+}
+
+// Card
+.csd-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--bc-card);
+    border-radius: var(--br-card);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 1rem auto;
+}
+
+.csd-card-header img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    // border: 1px solid var(--bc-card);
+    border-radius: calc(var(--br-card) - var(--p-card) / 2 / 2) !important;
+}
+
+.csd-card-header {
+    padding: calc(var(--p-card) / 2) calc(var(--p-card) / 2) 0 !important;
+    background-color: transparent;
+    border-bottom: 0;
+}
+
+.csd-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-card);
+    padding: var(--p-card)!important;
+    font-size: 1rem;
+}
+
+.csd-card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.csd-card-subtitle {
+    font-size: .75rem;
+    font-weight: lighter;
+}
+
+.csd-card-content {
+    font-size: .9rem;
+}
+
+.csd-card-footer {
+    background-color: transparent;
+    padding: 0;
+    border-top: none;
+    margin-top: 1rem;
+}
+// Card
+
+// Button
+.csd-btn {
+    background-color: var(--bg-btn);    
+    padding: var(--p-btn);
+    border-radius: var(--br-btn);
+    color: var(--contrast-color);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.csd-btn:hover {
+    background-color: var(--accent-color-hover);
+}
+// Button
+
+// Typography
+.csd-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+// Typography
+
+// Utilites
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+// Utilites
+
+// Input
+input,
+textarea,
+select {
+    background-color: var(--bg-input)!important;
+    border: 1px solid var(--bc-input)!important;
+    padding: var(--p-input)!important;
+    border-radius: var(--br-input)!important;
+    width: 100%;
+    box-sizing: border-box!important;
+    padding: var(--p-input)!important;
+    color: var(--text-color-csd)!important;
+}
+
+input[disabled],
+textarea[disabled] {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none!important;
+    border-color: var(--accent-color)!important;
+}
+// Input
+
+// Form
+.csd-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-form);
+}
+
+.csd-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-field);
+    position: relative;
+}
+
+.csd-label {
+    font-weight: bold;
+}
+
+.csd-input {
+    padding: var(--p-input);
+    border: 1px solid var(--bc-input);
+    border-radius: var(--br-input);
+}
+
+.csd-input::placeholder {
+    color: var(--text-color);
+}
+
+/* Float Label */
+.csd-float-label{
+    margin-top: calc(var(--font-size) * var(--line-height) + var(--gap-field));
+}
+.csd-float-label .csd-label {
+    position: absolute;
+    top: 50%;
+    left: var(--px-input);
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    font-size: calc(var(--font-size) * .8);
+    font-weight: lighter;
+}
+
+// Se focus o non viene mostrato il placeholder allora mostra il label
+.csd-float-label .csd-input:focus + .csd-label,
+.csd-float-label .csd-input:not(:placeholder-shown) + .csd-label {
+    top: -1.25rem;
+    left: 0rem;
+    font-size: var(--font-size);
+    font-weight: bold;
+}
+
+.csd-float-label .csd-input::placeholder {
+    color: transparent;
+}
+
+/* Inline Form Field - Fit Content Label */
+.csd-field-inline {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-field);
+    align-items: center;
+    margin-bottom: var(--mb-field);
+
+    .csd-label {
+        width: clamp(20%, fit-content, 30%);
+        white-space: nowrap;
+    }
+
+    .csd-input {
+        width: clamp(70%, fit-content, 80%);
+    }
+}
+
+/* Inline Form Field - Fixed Label Width */
+.csd-fixed-label .csd-label {
+    width: 30%;
+    word-wrap: break-word;
+}
+
+// Form
