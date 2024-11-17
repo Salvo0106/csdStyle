@@ -1,5 +1,5 @@
 {
-    "name": "csdstyle",
+    "name": "csdsolutions-csdstyle",
     "version": "1.0.0",
     "description": "Stile per i progetti di CSD Solutions",
     "main": "csdstyle.scss"
